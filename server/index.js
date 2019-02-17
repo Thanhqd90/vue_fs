@@ -8,6 +8,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+const posts = require("./routes/api/posts");
+
+app.use("/api/posts", posts);
+
 // Handle production
 if (process.env.NODE_ENV === "production") {
   // Static folder
